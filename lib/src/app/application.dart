@@ -1,3 +1,5 @@
+import 'package:crafty_bay/src/app/config/theme/dark_theme.dart';
+import 'package:crafty_bay/src/app/config/theme/light_theme.dart';
 import 'package:crafty_bay/src/app/constants/app_strings.dart';
 import 'package:crafty_bay/src/routes/routes.dart';
 import 'package:crafty_bay/src/routes/routes_handler.dart';
@@ -19,6 +21,9 @@ class CraftyBay extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         defaultTransition: Transition.fade,
         transitionDuration: Duration(milliseconds: 600),
+        theme: LightTheme.getLightTheme,
+        darkTheme: DarkTheme.getDarkTheme,
+        themeMode: ThemeMode.light,
         initialRoute: BaseRoute.splashScreen,
         getPages: routesHandler,
       ),
