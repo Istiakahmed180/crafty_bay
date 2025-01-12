@@ -6,4 +6,8 @@ import 'package:get/get.dart';
 List<GetPage> routesHandler = [
   // Splash Screen
   GetPage(name: BaseRoute.splashScreen, page: () => RoutesConfig.splashScreen),
+  // Email Verification Screen
+  GetPage(
+      name: BaseRoute.emailVerificationScreen,
+      page: () => RoutesConfig.emailVerificationScreen),
 ];
