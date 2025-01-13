@@ -15,38 +15,52 @@ class SplashScreen extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        width: double.maxFinite,
+        width: double.infinity,
+        height: double.infinity,
         padding: REdgeInsets.all(20),
-        child: Column(
-          spacing: 10.h,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Spacer(),
-            SvgAssetsCmn(
-              svgAsset: SvgAssets.bgLogo,
-              svgWidth: 120,
-            ),
-            Spacer(),
-            SizedBox(
-              width: 25.w,
-              height: 25.w,
-              child: CircularProgressIndicator(
-                color: AppColors.primary,
-                strokeWidth: 3,
-                backgroundColor: AppColors.secondary,
-              ),
-            ),
-            Text(
-              "Version 1.0",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium
-                  ?.copyWith(color: AppColors.grey, fontSize: 14.sp),
-            ),
-          ],
+        child: OrientationBuilder(
+          builder: (context, orientation) {
+            final isPortrait = orientation == Orientation.portrait;
+            return _buildSplashContent(context, isPortrait);
+          },
         ),
       ),
+    );
+  }
+
+  Widget _buildSplashContent(BuildContext context, bool isPortrait) {
+    final logoSize = isPortrait ? 120.0 : 50.0;
+    final loaderSize = isPortrait ? 25.0.w : 12.0.w;
+    final textFontSize = isPortrait ? 14.sp : 7.sp;
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const Spacer(),
+        SvgAssetsCmn(
+          svgAsset: SvgAssets.bgLogo,
+          svgWidth: logoSize,
+        ),
+        const Spacer(),
+        SizedBox(
+          width: loaderSize,
+          height: loaderSize,
+          child: CircularProgressIndicator(
+            color: AppColors.primary,
+            strokeWidth: 3,
+            backgroundColor: AppColors.secondary,
+          ),
+        ),
+        SizedBox(height: 10.h),
+        Text(
+          "Version 1.0",
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: AppColors.grey,
+                fontSize: textFontSize,
+              ),
+        ),
+      ],
     );
   }
 }
