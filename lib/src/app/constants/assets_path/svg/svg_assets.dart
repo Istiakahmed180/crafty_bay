@@ -5,4 +5,5 @@ class SvgAssets {
 //  ------------------------------------------------------------------------- //
 
   static const String bgLogo = "$_baseLogo/logo.svg";
+  static const String navLogo = "$_baseLogo/logo_nav.svg";
 }

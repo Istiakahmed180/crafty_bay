@@ -1,3 +1,4 @@
+import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,8 +6,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Home Screen"),
+    return Scaffold(
+      appBar: HomeAppBar(),
+      body: const Center(
+        child: Text("Home Screen"),
+      ),
     );
   }
 }
