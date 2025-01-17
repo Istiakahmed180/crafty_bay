@@ -29,17 +29,19 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
             padding: EdgeInsets.symmetric(
               horizontal: isPortrait ? 35.w : 80.w,
             ),
-            child: Column(
-              children: [
-                SizedBox(height: (isPortrait ? 100 : 50).h),
-                _buildLogo(isPortrait),
-                SizedBox(height: 8.h),
-                _buildTitle(context, isPortrait),
-                SizedBox(height: 5.h),
-                _buildSubtitle(context),
-                SizedBox(height: 20.h),
-                _buildForm(isPortrait),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: (isPortrait ? 100 : 50).h),
+                  _buildLogo(isPortrait),
+                  SizedBox(height: 8.h),
+                  _buildTitle(context, isPortrait),
+                  SizedBox(height: 5.h),
+                  _buildSubtitle(context),
+                  SizedBox(height: 20.h),
+                  _buildForm(isPortrait),
+                ],
+              ),
             ),
           );
         },
@@ -113,7 +115,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
     return ElevatedButton(
       onPressed: () {
         if (_formKey.currentState!.validate()) {
-          // TODO: Implement form submission logic here.
+          emailVerificationController.submitEmailVerification();
         }
       },
       child: const Text("Next"),
