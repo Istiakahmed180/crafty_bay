@@ -16,4 +16,9 @@ List<GetPage> routesHandler = [
   GetPage(
       name: BaseRoute.emailOtpVerificationScreen,
       page: () => RoutesConfig.emailOtpVerificationScreen),
+
+  // Complete Profile Screen
+  GetPage(
+      name: BaseRoute.completeProfileScreen,
+      page: () => RoutesConfig.completeProfileScreen),
 ];

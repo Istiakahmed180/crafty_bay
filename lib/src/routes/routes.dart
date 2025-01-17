@@ -9,4 +9,7 @@ class BaseRoute {
   // Email OTP Verification Route
   static const String emailOtpVerificationScreen =
       "/email_otp_verification_screen";
+
+  // Complete Profile Route
+  static const String completeProfileScreen = "/complete_profile_screen";
 }
