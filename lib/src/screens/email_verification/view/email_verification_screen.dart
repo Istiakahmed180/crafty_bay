@@ -17,66 +17,106 @@ class EmailVerificationScreen extends StatefulWidget {
 class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
   final EmailVerificationController emailVerificationController =
       Get.put(EmailVerificationController());
-  final GlobalKey _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 100.h,
-          ),
-          SvgAssetsCmn(
-            svgAsset: SvgAssets.bgLogo,
-            svgWidth: 120,
-          ),
-          SizedBox(
-            height: 8.h,
-          ),
-          Text(
-            "Welcome Back",
-            style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                fontWeight: FontWeight.w600, color: AppColors.lightBlack),
-          ),
-          SizedBox(
-            height: 5.h,
-          ),
-          Text(
-            "Please Enter Your Email Address",
-            style: Theme.of(context)
-                .textTheme
-                .titleSmall
-                ?.copyWith(color: AppColors.grey),
-          ),
-          SizedBox(
-            height: 20.h,
-          ),
-          Form(
-            key: _formKey,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 35.w),
-              child: Column(
-                children: [
-                  TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    controller:
-                        emailVerificationController.emailAddressController,
-                    decoration: InputDecoration(hintText: "Email Address"),
-                  ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text("Next"),
-                  )
-                ],
-              ),
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          final isPortrait = orientation == Orientation.portrait;
+          return Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: isPortrait ? 35.w : 80.w,
             ),
+            child: Column(
+              children: [
+                SizedBox(height: (isPortrait ? 100 : 50).h),
+                _buildLogo(isPortrait),
+                SizedBox(height: 8.h),
+                _buildTitle(context, isPortrait),
+                SizedBox(height: 5.h),
+                _buildSubtitle(context),
+                SizedBox(height: 20.h),
+                _buildForm(isPortrait),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildLogo(bool isPortrait) {
+    return SvgAssetsCmn(
+      svgAsset: SvgAssets.bgLogo,
+      svgWidth: isPortrait ? 120.0 : 40.0,
+    );
+  }
+
+  Widget _buildTitle(BuildContext context, bool isPortrait) {
+    return Text(
+      "Welcome Back",
+      style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+            fontWeight: FontWeight.w600,
+            color: AppColors.lightBlack,
+            fontSize: isPortrait ? 32.0 : 28.0,
           ),
+    );
+  }
+
+  Widget _buildSubtitle(BuildContext context) {
+    return Text(
+      "Please Enter Your Email Address",
+      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+            color: AppColors.grey,
+          ),
+    );
+  }
+
+  Widget _buildForm(bool isPortrait) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          _buildEmailField(),
+          SizedBox(height: 15.h),
+          _buildSubmitButton(),
         ],
       ),
+    );
+  }
+
+  Widget _buildEmailField() {
+    return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      keyboardType: TextInputType.emailAddress,
+      controller: emailVerificationController.emailAddressController,
+      decoration: const InputDecoration(
+        hintText: "Email Address",
+      ),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "Email cannot be empty";
+        }
+        final emailRegex =
+            RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+        if (!emailRegex.hasMatch(value)) {
+          return "Enter a valid email address";
+        }
+        return null;
+      },
+    );
+  }
+
+  Widget _buildSubmitButton() {
+    return ElevatedButton(
+      onPressed: () {
+        if (_formKey.currentState!.validate()) {
+          // TODO: Implement form submission logic here.
+        }
+      },
+      child: const Text("Next"),
     );
   }
 }

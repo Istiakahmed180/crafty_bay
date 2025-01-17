@@ -30,7 +30,14 @@ class LightTheme {
         hintStyle: TextStyle(color: AppColors.grey),
         border: _buildOutlineInputBorder(),
         enabledBorder: _buildOutlineInputBorder(),
-        focusedBorder: _buildInputFocusedBorder());
+        focusedBorder: _buildInputFocusedBorder(),
+        errorBorder: _buildErrorInputBorder());
+  }
+
+  static OutlineInputBorder _buildErrorInputBorder() {
+    return OutlineInputBorder(
+        borderRadius: BorderRadius.circular(6),
+        borderSide: BorderSide(color: AppColors.red));
   }
 
   static OutlineInputBorder _buildInputFocusedBorder() {
