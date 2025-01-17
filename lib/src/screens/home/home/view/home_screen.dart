@@ -1,5 +1,8 @@
 import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_app_bar.dart';
+import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_carousel_slider.dart';
+import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_search_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,8 +11,22 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeAppBar(),
-      body: const Center(
-        child: Text("Home Screen"),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 10.h,
+              ),
+              HomeSearchField(),
+              SizedBox(
+                height: 10.h,
+              ),
+              HomeCarouselSlider()
+            ],
+          ),
+        ),
       ),
     );
   }

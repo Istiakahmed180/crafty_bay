@@ -11,9 +11,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.white,
-      title: SvgAssetsCmn(
-        svgAsset: SvgAssets.navLogo,
-        svgWidth: 120,
+      title: Padding(
+        padding: EdgeInsets.only(left: 4),
+        child: SvgAssetsCmn(
+          svgAsset: SvgAssets.navLogo,
+          svgWidth: 120,
+        ),
       ),
       actions: [
         CircleAvatar(
@@ -44,7 +47,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         SizedBox(
-          width: 10.w,
+          width: 16.w,
         ),
       ],
     );
