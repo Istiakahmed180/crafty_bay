@@ -7,7 +7,30 @@ class LightTheme {
         brightness: Brightness.light,
         colorSchemeSeed: AppColors.primary,
         inputDecorationTheme: _buildInputDecorationTheme(),
-        elevatedButtonTheme: _buildElevatedButtonThemeData());
+        elevatedButtonTheme: _buildElevatedButtonThemeData(),
+        navigationBarTheme: _buildNavigationBarThemeData());
+  }
+
+  static NavigationBarThemeData _buildNavigationBarThemeData() {
+    return NavigationBarThemeData(
+      backgroundColor: AppColors.white,
+      elevation: 8,
+      indicatorColor: AppColors.primary.withAlpha(25),
+      labelTextStyle: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
+          return TextStyle(color: AppColors.primary, fontSize: 16);
+        }
+        return TextStyle(color: AppColors.grey, fontSize: 16);
+      }),
+      iconTheme: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
+          return IconThemeData(color: AppColors.primary, size: 30);
+        }
+        return IconThemeData(color: AppColors.grey, size: 30);
+      }),
+      surfaceTintColor: Colors.transparent,
+      shadowColor: AppColors.black.withAlpha(50),
+    );
   }
 
   static ElevatedButtonThemeData _buildElevatedButtonThemeData() {

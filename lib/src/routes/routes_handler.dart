@@ -21,4 +21,9 @@ List<GetPage> routesHandler = [
   GetPage(
       name: BaseRoute.completeProfileScreen,
       page: () => RoutesConfig.completeProfileScreen),
+
+  // Common Navigation Screen
+  GetPage(
+      name: BaseRoute.commonNavigationScreen,
+      page: () => RoutesConfig.commonNavigationScreen),
 ];

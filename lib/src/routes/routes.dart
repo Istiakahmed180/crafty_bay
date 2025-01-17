@@ -12,4 +12,7 @@ class BaseRoute {
 
   // Complete Profile Route
   static const String completeProfileScreen = "/complete_profile_screen";
+
+  // Common Navigation Route
+  static const String commonNavigationScreen = "/common_navigation_screen";
 }

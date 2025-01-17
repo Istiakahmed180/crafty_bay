@@ -11,7 +11,7 @@ class SplashController extends GetxController {
   Future<void> moveToNextScreen() async {
     await Future.delayed(
       Duration(seconds: 5),
-      () => Get.offNamed(BaseRoute.emailVerificationScreen),
+      () => Get.offNamed(BaseRoute.commonNavigationScreen),
     );
   }
 }

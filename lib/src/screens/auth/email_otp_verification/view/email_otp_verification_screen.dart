@@ -1,7 +1,7 @@
 import 'package:crafty_bay/src/app/constants/app_colors.dart';
 import 'package:crafty_bay/src/app/constants/assets_path/svg/svg_assets.dart';
 import 'package:crafty_bay/src/common/widgets/svg_assets/svg_assets_cmn.dart';
-import 'package:crafty_bay/src/screens/email_otp_verification/controller/email_otp_verification_controller.dart';
+import 'package:crafty_bay/src/screens/auth/email_otp_verification/controller/email_otp_verification_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -111,41 +111,48 @@ class EmailOtpVerificationScreen extends StatelessWidget {
   }
 
   Widget _buildCountAndResendCode(BuildContext context, bool isPortrait) {
-    return Column(
-      children: [
-        SizedBox(height: 20.h),
-        Text.rich(
-          TextSpan(
-            children: [
-              TextSpan(
-                text: "This code will expire in ",
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.grey,
-                      fontWeight: FontWeight.normal,
-                    ),
-              ),
-              TextSpan(
-                text: "120s",
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.primary,
-                      fontWeight: FontWeight.normal,
-                    ),
-              ),
-            ],
-          ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            "Resend Code",
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.grey,
-                  fontWeight: FontWeight.normal,
+    return Obx(() {
+      final controller = Get.find<EmailOtpVerificationController>();
+
+      return Column(
+        children: [
+          SizedBox(height: 20.h),
+          !controller.canResendCode.value
+              ? Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "This code will expire in ",
+                        style:
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  color: AppColors.grey,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                      ),
+                      TextSpan(
+                        text: "${controller.countdown.value}s",
+                        style:
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  color: AppColors.primary,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                      ),
+                    ],
+                  ),
+                )
+              : TextButton(
+                  onPressed: controller.resendCode,
+                  child: Text(
+                    "Resend Code",
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.normal,
+                        ),
+                  ),
                 ),
-          ),
-        ),
-        if (!isPortrait) SizedBox(height: 20.h),
-      ],
-    );
+          if (!isPortrait) SizedBox(height: 20.h),
+        ],
+      );
+    });
   }
 }

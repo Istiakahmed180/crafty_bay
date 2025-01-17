@@ -1,7 +1,7 @@
 import 'package:crafty_bay/src/app/constants/app_colors.dart';
 import 'package:crafty_bay/src/app/constants/assets_path/svg/svg_assets.dart';
 import 'package:crafty_bay/src/common/widgets/svg_assets/svg_assets_cmn.dart';
-import 'package:crafty_bay/src/screens/splash/controller/splash_controller.dart';
+import 'package:crafty_bay/src/screens/auth/splash/controller/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
