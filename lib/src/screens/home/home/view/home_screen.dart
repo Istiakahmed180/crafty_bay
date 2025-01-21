@@ -1,8 +1,10 @@
 import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_app_bar.dart';
 import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_carousel_slider.dart';
-import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_categories_slider.dart';
+import 'package:crafty_bay/src/screens/home/home/widgets/category_card.dart';
+import 'package:crafty_bay/src/screens/home/home/widgets/home_section_slider.dart';
 import 'package:crafty_bay/src/screens/home/home/widgets/home_header_and_widget.dart';
 import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_search_field.dart';
+import 'package:crafty_bay/src/screens/home/home/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,13 +29,31 @@ class HomeScreen extends StatelessWidget {
               ),
               HomeCarouselSlider(),
               SizedBox(
-                height: 10.h,
+                height: 15.h,
               ),
               HomeHeaderAndWidget(
                 headerTitle: "All Categories",
                 headerActionTitle: "See All",
-                widgetSection: HomeCategoriesSlider(),
-              )
+                widgetSection: HomeSectionSlider(
+                  height: 100,
+                  widgetSection:
+                      CategoryCard(icon: Icons.tv_outlined, title: "Fashion"),
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              HomeHeaderAndWidget(
+                headerTitle: "Popular",
+                headerActionTitle: "See All",
+                widgetSection: HomeSectionSlider(
+                  height: 150,
+                  widgetSection: ProductCard(),
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
             ],
           ),
         ),
