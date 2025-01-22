@@ -11,6 +11,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.white,
+      surfaceTintColor: AppColors.white,
       title: Padding(
         padding: EdgeInsets.only(left: 4),
         child: SvgAssetsCmn(

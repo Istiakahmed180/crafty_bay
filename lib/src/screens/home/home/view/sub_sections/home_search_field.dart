@@ -28,6 +28,6 @@ class HomeSearchField extends StatelessWidget {
   OutlineInputBorder _buildOutlineInputBorder() {
     return OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(color: AppColors.grey.withAlpha(15)));
+        borderSide: BorderSide(color: AppColors.searchInputColor));
   }
 }

@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeHeaderAndWidget extends StatelessWidget {
-  const HomeHeaderAndWidget({
-    super.key,
-    required this.headerTitle,
-    required this.headerActionTitle,
-    required this.widgetSection,
-  });
+  const HomeHeaderAndWidget(
+      {super.key,
+      required this.headerTitle,
+      required this.widgetSection,
+      required this.onTap});
 
   final String headerTitle;
-  final String headerActionTitle;
+  final VoidCallback onTap;
   final Widget widgetSection;
 
   @override
@@ -30,9 +29,9 @@ class HomeHeaderAndWidget extends StatelessWidget {
                   ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: onTap,
               child: Text(
-                headerActionTitle,
+                "See All",
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w500,
                       color: AppColors.primary.withValues(alpha: 0.7),

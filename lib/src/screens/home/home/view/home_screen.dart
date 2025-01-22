@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
               ),
               HomeHeaderAndWidget(
                 headerTitle: "All Categories",
-                headerActionTitle: "See All",
+                onTap: () {},
                 widgetSection: HomeSectionSlider(
                   height: 100,
                   widgetSection:
@@ -45,14 +45,36 @@ class HomeScreen extends StatelessWidget {
               ),
               HomeHeaderAndWidget(
                 headerTitle: "Popular",
-                headerActionTitle: "See All",
+                onTap: () {},
                 widgetSection: HomeSectionSlider(
-                  height: 150,
+                  verticalPadding: 10,
+                  height: 180,
                   widgetSection: ProductCard(),
                 ),
               ),
               SizedBox(
                 height: 10.h,
+              ),
+              HomeHeaderAndWidget(
+                headerTitle: "Special",
+                onTap: () {},
+                widgetSection: HomeSectionSlider(
+                  verticalPadding: 10,
+                  height: 180,
+                  widgetSection: ProductCard(),
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              HomeHeaderAndWidget(
+                headerTitle: "New",
+                onTap: () {},
+                widgetSection: HomeSectionSlider(
+                  verticalPadding: 10,
+                  height: 180,
+                  widgetSection: ProductCard(),
+                ),
               ),
             ],
           ),

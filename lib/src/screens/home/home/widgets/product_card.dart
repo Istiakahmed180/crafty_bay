@@ -10,8 +10,15 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: AppColors.primary.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(8.r)),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primary.withValues(alpha: 0.1),
+            offset: Offset(0, 1),
+          ),
+        ],
+        borderRadius: BorderRadius.circular(8.r),
+      ),
+      width: 155.w,
       child: Column(
         children: [
           Expanded(
@@ -22,14 +29,27 @@ class ProductCard extends StatelessWidget {
           ),
           Container(
             padding: REdgeInsets.all(8),
-            color: AppColors.white,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.black.withValues(alpha: 0.1),
+                  blurRadius: 4,
+                  offset: Offset(0, 1),
+                ),
+              ],
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(8.r),
+                  bottomRight: Radius.circular(8.r)),
+              color: AppColors.white,
+            ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "New Year Special Shoe 30",
+                  "New Year Special Shoe",
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       fontWeight: FontWeight.w500,
-                      color: AppColors.black.withValues(alpha: .7)),
+                      color: AppColors.black.withValues(alpha: 0.7)),
                 ),
                 SizedBox(
                   height: 5.h,
@@ -47,11 +67,34 @@ class ProductCard extends StatelessWidget {
                     Row(
                       children: [
                         Icon(
-                          Icons.star,
-                          color: AppColors.yellow,
-                        )
+                          size: 20,
+                          Icons.star_rounded,
+                          color: AppColors.orangeAccent,
+                        ),
+                        SizedBox(
+                          width: 0.w,
+                        ),
+                        Text("4.8",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall!
+                                .copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.black
+                                        .withValues(alpha: 0.7))),
                       ],
-                    )
+                    ),
+                    Container(
+                      padding: REdgeInsets.all(3),
+                      decoration: BoxDecoration(
+                          color: AppColors.primary,
+                          borderRadius: BorderRadius.circular(4.r)),
+                      child: Icon(
+                        Icons.favorite_border_rounded,
+                        size: 20,
+                        color: AppColors.white.withValues(alpha: 0.5),
+                      ),
+                    ),
                   ],
                 )
               ],
