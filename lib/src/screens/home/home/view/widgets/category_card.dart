@@ -16,8 +16,8 @@ class CategoryCard extends StatelessWidget {
           width: 80,
           height: 80,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.r),
-              color: AppColors.primary.withValues(alpha: 0.1)),
+              borderRadius: BorderRadius.circular(10.r),
+              color: AppColors.primary.withValues(alpha: 0.07)),
           child: Icon(
             icon,
             size: 45,
@@ -30,8 +30,8 @@ class CategoryCard extends StatelessWidget {
         Text(
           title,
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w400,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
                 color: AppColors.primary,
               ),
         )

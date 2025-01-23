@@ -6,6 +6,7 @@ class LightTheme {
     return ThemeData(
         brightness: Brightness.light,
         scaffoldBackgroundColor: AppColors.white,
+        appBarTheme: _buildAppBarTheme(),
         inputDecorationTheme: _buildInputDecorationTheme(),
         elevatedButtonTheme: _buildElevatedButtonThemeData(),
         navigationBarTheme: _buildNavigationBarThemeData());
@@ -31,6 +32,11 @@ class LightTheme {
       surfaceTintColor: Colors.transparent,
       shadowColor: AppColors.black.withAlpha(50),
     );
+  }
+
+  static AppBarTheme _buildAppBarTheme() {
+    return AppBarTheme(
+        backgroundColor: AppColors.primary, foregroundColor: AppColors.white);
   }
 
   static ElevatedButtonThemeData _buildElevatedButtonThemeData() {

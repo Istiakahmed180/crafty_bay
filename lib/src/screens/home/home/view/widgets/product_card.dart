@@ -16,7 +16,7 @@ class ProductCard extends StatelessWidget {
             offset: Offset(0, 1),
           ),
         ],
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(10.r),
       ),
       width: 155.w,
       child: Column(
@@ -38,8 +38,8 @@ class ProductCard extends StatelessWidget {
                 ),
               ],
               borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(8.r),
-                  bottomRight: Radius.circular(8.r)),
+                  bottomLeft: Radius.circular(10.r),
+                  bottomRight: Radius.circular(10.r)),
               color: AppColors.white,
             ),
             child: Column(

@@ -1,10 +1,10 @@
-import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_app_bar.dart';
-import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_carousel_slider.dart';
-import 'package:crafty_bay/src/screens/home/home/widgets/category_card.dart';
-import 'package:crafty_bay/src/screens/home/home/widgets/home_section_slider.dart';
-import 'package:crafty_bay/src/screens/home/home/widgets/home_header_and_widget.dart';
-import 'package:crafty_bay/src/screens/home/home/view/sub_sections/home_search_field.dart';
-import 'package:crafty_bay/src/screens/home/home/widgets/product_card.dart';
+import 'package:crafty_bay/src/screens/home/home/view/UI/sub_sections/home_app_bar.dart';
+import 'package:crafty_bay/src/screens/home/home/view/UI/sub_sections/home_carousel_slider.dart';
+import 'package:crafty_bay/src/screens/home/home/view/widgets/category_card.dart';
+import 'package:crafty_bay/src/screens/home/home/view/widgets/home_section_slider.dart';
+import 'package:crafty_bay/src/screens/home/home/view/widgets/home_header_and_widget.dart';
+import 'package:crafty_bay/src/screens/home/home/view/UI/sub_sections/home_search_field.dart';
+import 'package:crafty_bay/src/screens/home/home/view/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
