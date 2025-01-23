@@ -10,4 +10,12 @@ class NavigationCmnController extends GetxController {
       _selectedIndex.value = index;
     }
   }
+
+  void moveToHome() {
+    changeIndex(0);
+  }
+
+  void moveToCategory() {
+    changeIndex(1);
+  }
 }

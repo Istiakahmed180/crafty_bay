@@ -36,7 +36,9 @@ class LightTheme {
 
   static AppBarTheme _buildAppBarTheme() {
     return AppBarTheme(
-        backgroundColor: AppColors.primary, foregroundColor: AppColors.white);
+      backgroundColor: AppColors.white,
+      elevation: 0.5,
+    );
   }
 
   static ElevatedButtonThemeData _buildElevatedButtonThemeData() {
