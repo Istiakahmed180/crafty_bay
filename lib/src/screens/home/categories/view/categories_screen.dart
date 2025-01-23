@@ -34,7 +34,7 @@ class CategoriesScreen extends StatelessWidget {
           ),
           itemCount: 20,
           itemBuilder: (context, index) {
-            return CategoryCard(icon: Icons.tv, title: "Shoe");
+            return CategoryCard(icon: Icons.tv, title: "Computer");
           },
         ),
       ),

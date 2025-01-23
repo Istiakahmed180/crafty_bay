@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                 widgetSection: HomeSectionSlider(
                   height: 100,
                   widgetSection:
-                      CategoryCard(icon: Icons.tv_outlined, title: "Fashion"),
+                      CategoryCard(icon: Icons.tv_outlined, title: "Computer"),
                 ),
               ),
               SizedBox(

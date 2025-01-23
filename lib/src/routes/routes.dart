@@ -15,4 +15,7 @@ class BaseRoute {
 
   // Common Navigation Route
   static const String commonNavigationScreen = "/common_navigation_screen";
+
+  // Category Products Route
+  static const String categoryProductsScreen = "/category_products_screen";
 }

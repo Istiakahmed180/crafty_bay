@@ -36,8 +36,8 @@ class LightTheme {
 
   static AppBarTheme _buildAppBarTheme() {
     return AppBarTheme(
+      surfaceTintColor: AppColors.white,
       backgroundColor: AppColors.white,
-      elevation: 0.5,
     );
   }
 
