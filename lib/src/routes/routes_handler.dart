@@ -32,4 +32,9 @@ List<GetPage> routesHandler = [
       name: BaseRoute.categoryProductsScreen,
       page: () => RoutesConfig.categoryProductsScreen(
           categoryName: Get.parameters["category"] ?? "")),
+
+  // Product Details Screen
+  GetPage(
+      name: BaseRoute.productDetailsScreen,
+      page: () => RoutesConfig.productDetailsScreen)
 ];

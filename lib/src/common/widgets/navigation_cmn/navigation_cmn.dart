@@ -1,7 +1,7 @@
 import 'package:crafty_bay/src/common/controller/navigation_cmn/navigation_cmn_controller.dart';
 import 'package:crafty_bay/src/screens/home/cart/view/cart_screen.dart';
 import 'package:crafty_bay/src/screens/home/categories/view/categories_screen.dart';
-import 'package:crafty_bay/src/screens/home/home/view/UI/home_screen.dart';
+import 'package:crafty_bay/src/screens/home/home/view/ui/home_screen.dart';
 import 'package:crafty_bay/src/screens/home/wish/view/wish_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -3,7 +3,8 @@ import 'package:crafty_bay/src/screens/auth/complete_profile/view/complete_profi
 import 'package:crafty_bay/src/screens/auth/email_otp_verification/view/email_otp_verification_screen.dart';
 import 'package:crafty_bay/src/screens/auth/email_verification/view/email_verification_screen.dart';
 import 'package:crafty_bay/src/screens/auth/splash/view/splash_screen.dart';
-import 'package:crafty_bay/src/screens/home/home/view/UI/sub_sections/category_products.dart';
+import 'package:crafty_bay/src/screens/home/home/view/ui/sub_sections/category_products.dart';
+import 'package:crafty_bay/src/screens/home/home/view/ui/sub_sections/product_details.dart';
 
 // Routes Configuration
 class RoutesConfig {
@@ -27,4 +28,7 @@ class RoutesConfig {
       {required String categoryName}) {
     return CategoryProducts(categoryName: categoryName);
   }
+
+  // Product Details Screen
+  static const productDetailsScreen = ProductDetails();
 }

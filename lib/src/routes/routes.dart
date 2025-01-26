@@ -18,4 +18,7 @@ class BaseRoute {
 
   // Category Products Route
   static const String categoryProductsScreen = "/category_products_screen";
+
+  // Products Details Route
+  static const String productDetailsScreen = "/product_details_screen";
 }
