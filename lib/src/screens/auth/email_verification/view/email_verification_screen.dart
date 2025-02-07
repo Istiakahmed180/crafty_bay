@@ -16,7 +16,7 @@ class EmailVerificationScreen extends StatefulWidget {
 
 class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
   final EmailVerificationController emailVerificationController =
-      Get.put(EmailVerificationController());
+      Get.find<EmailVerificationController>();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override

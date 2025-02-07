@@ -1,6 +1,7 @@
 import 'package:crafty_bay/src/app/config/theme/dark_theme.dart';
 import 'package:crafty_bay/src/app/config/theme/light_theme.dart';
 import 'package:crafty_bay/src/app/constants/app_strings.dart';
+import 'package:crafty_bay/src/app/controller_binding/controller_binding.dart';
 import 'package:crafty_bay/src/routes/routes.dart';
 import 'package:crafty_bay/src/routes/routes_handler.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class CraftyBay extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: GetMaterialApp(
+        initialBinding: ControllerBinding(),
         title: AppStrings.appName,
         debugShowCheckedModeBanner: false,
         defaultTransition: Transition.fade,

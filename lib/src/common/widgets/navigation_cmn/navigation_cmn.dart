@@ -12,7 +12,7 @@ class NavigationCmn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final NavigationCmnController navigationCmnController =
-        Get.put(NavigationCmnController());
+        Get.find<NavigationCmnController>();
 
     final List<Widget> screens = [
       HomeScreen(),
